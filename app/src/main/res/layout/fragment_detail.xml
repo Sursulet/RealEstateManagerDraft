@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="realEstate"
+            type="com.openclassrooms.realestatemanager.RealEstate" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".DetailFragment">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/fragment_detail_title_media"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_media"
+            android:textColor="@android:color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fragment_detail_media"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/row_photo"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_detail_title_media" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/fragment_detail_title_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_description"
+            android:textColor="@android:color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_detail_media" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/fragment_detail_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{realEstate.description}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_detail_title_description"
+            tools:text="oihefmnqlkjmfql" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/fragment_detail_title_surface"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_surface"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_detail_description" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/fragment_detail_surface"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{realEstate.surface}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_detail_title_surface"
+            tools:text="oihefmnqlkjmfql" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/fragment_detail_title_rooms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_number_of_rooms"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_detail_surface" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/fragment_detail_rooms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{realEstate.rooms}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_detail_title_rooms"
+            tools:text="oihefmnqlkjmfql" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/fragment_detail_title_bathrooms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_number_of_bathrooms"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_detail_rooms" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/fragment_detail_bathrooms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_detail_title_bathrooms"
+            tools:text="oihefmnqlkjmfql" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/fragment_detail_title_bedrooms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_number_of_bedrooms"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_detail_bathrooms" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/fragment_detail_bedrooms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{realEstate.bedrooms}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_detail_title_bedrooms"
+            tools:text="oihefmnqlkjmfql" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/fragment_detail_title_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_location"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_detail_bedrooms" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/fragment_detail_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{realEstate.address}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_detail_title_location"
+            tools:text="oihefmnqlkjmfql" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/map"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:context=".MapsActivity" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
