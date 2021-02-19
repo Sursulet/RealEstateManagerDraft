@@ -4,7 +4,6 @@ import android.graphics.drawable.Drawable;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageView;
-import androidx.databinding.BindingAdapter;
 
 import com.bumptech.glide.Glide;
 
@@ -69,10 +68,5 @@ public class MasterUiModel {
     @Override
     public boolean equals(@Nullable Object o) {
         return super.equals(o);
-    }
-
-    @BindingAdapter({"imageUrl", "error"})
-    public static void loadImage(AppCompatImageView view, String url, Drawable error) {
-        Glide.with(view).load(url).error(error).into(view);
     }
 }

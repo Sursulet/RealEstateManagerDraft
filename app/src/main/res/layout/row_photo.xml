@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
-    <data>
-
-        <variable
-            name="photoUiModel"
-            type="com.openclassrooms.realestatemanager.PhotoUiModel" />
-    </data>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/row_photo_img"
@@ -29,10 +21,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@android:color/black"
-            android:text="@{photoUiModel.title}"
             app:layout_constraintBottom_toBottomOf="@+id/row_photo_img"
             app:layout_constraintEnd_toEndOf="@+id/row_photo_img"
             app:layout_constraintStart_toStartOf="@+id/row_photo_img" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</layout>

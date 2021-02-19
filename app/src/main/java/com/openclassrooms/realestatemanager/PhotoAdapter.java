@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.openclassrooms.realestatemanager.databinding.RowPhotoBinding;
 
 public class PhotoAdapter extends ListAdapter<PhotoUiModel, PhotoAdapter.PhotoViewHolder> {
@@ -29,7 +31,7 @@ public class PhotoAdapter extends ListAdapter<PhotoUiModel, PhotoAdapter.PhotoVi
     @Override
     public void onBindViewHolder(@NonNull PhotoViewHolder holder, int position) {
         PhotoUiModel photoUiModel = getItem(position);
-        holder.rowPhotoBinding.setPhotoUiModel(photoUiModel);
+        holder.bind(photoUiModel);
     }
 
     public static class PhotoViewHolder extends RecyclerView.ViewHolder {
@@ -39,6 +41,14 @@ public class PhotoAdapter extends ListAdapter<PhotoUiModel, PhotoAdapter.PhotoVi
         public PhotoViewHolder(@NonNull RowPhotoBinding rowPhotoBinding) {
             super(rowPhotoBinding.getRoot());
             this.rowPhotoBinding = rowPhotoBinding;
+        }
+
+        public void bind(PhotoUiModel photoUiModel) {
+            rowPhotoBinding.rowPhotoTitle.setText(photoUiModel.getTitle());
+            Glide.with(rowPhotoBinding.rowPhotoImg)
+                    .load(photoUiModel.getPhoto())
+                    .transform(new CenterCrop())
+                    .into(rowPhotoBinding.rowPhotoImg);
         }
     }
 

@@ -35,7 +35,7 @@ public class RealEstateAdapter extends ListAdapter<MasterUiModel,RealEstateAdapt
     @Override
     public void onBindViewHolder(@NonNull RealEstateViewHolder holder, int position) {
         MasterUiModel masterUiModel = getItem(position);
-        holder.rowRealEstateBinding.setMasterUiModel(masterUiModel);
+        holder.bind(masterUiModel);
     }
 
     public class RealEstateViewHolder extends RecyclerView.ViewHolder {
@@ -48,7 +48,7 @@ public class RealEstateAdapter extends ListAdapter<MasterUiModel,RealEstateAdapt
             this.rowRealEstateBinding.getRoot().setOnClickListener(v -> onItemClickListener.onItemClick(getAdapterPosition()));
         }
 
-        public void bind() {}
+        public void bind(MasterUiModel masterUiModel) {}
     }
 
     public static final DiffUtil.ItemCallback<MasterUiModel> DIFF_CALLBACK =
@@ -65,6 +65,6 @@ public class RealEstateAdapter extends ListAdapter<MasterUiModel,RealEstateAdapt
             };
 
     public interface OnItemClickListener {
-        public void onItemClick (int position);
+        void onItemClick(int position);
     }
 }
