@@ -26,6 +26,8 @@ android {
     }
 }
 
+apply plugin: 'kotlin-kapt'
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.2.0'
@@ -49,7 +51,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     testImplementation 'androidx.room:room-testing:2.2.6'
     androidTestImplementation 'androidx.navigation:navigation-testing:2.3.3'
-    annotationProcessor 'androidx.room:room-compiler:2.2.6'
+    kapt 'androidx.room:room-compiler:2.2.6'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'

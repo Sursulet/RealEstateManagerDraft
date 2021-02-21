@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".AddFragment">
 
+
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/fragment_add_title_media"
         android:layout_width="wrap_content"

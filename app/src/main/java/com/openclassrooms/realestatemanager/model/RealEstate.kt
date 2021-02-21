@@ -1,4 +1,12 @@
 package com.openclassrooms.realestatemanager.model
 
-class RealEstate {
-}
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity
+data class RealEstate (
+
+        @PrimaryKey(autoGenerate = true) val id: Int,
+        var type:String?,
+        val description:String?
+)
