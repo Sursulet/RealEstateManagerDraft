@@ -8,11 +8,9 @@ import com.openclassrooms.realestatemanager.ui.fragments.RealEstateDetailFragmen
 
 class RealEstateDetailActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityRealEstateDetailBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityRealEstateDetailBinding.inflate(layoutInflater)
+        val binding = ActivityRealEstateDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         if(savedInstanceState == null) {

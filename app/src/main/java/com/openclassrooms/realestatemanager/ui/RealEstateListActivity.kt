@@ -21,17 +21,12 @@ class RealEstateListActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.topAppBar)
 
-        //if(savedInstanceState == null) {
-            //TODO : supportFragmentManager.commit {} ???
+        if(savedInstanceState == null) {
             supportFragmentManager.beginTransaction().apply {
                 replace(R.id.activity_real_estate_list_fragment_container, RealEstateListFragment())
-                commit()
-            }
-        //}
-
-        if (binding.activityRealEstateListFragmentContainerDetail != null) {
-            supportFragmentManager.beginTransaction().apply {
-                replace(R.id.activity_real_estate_list_fragment_container_detail, RealEstateDetailFragment())
+                if (binding.activityRealEstateListFragmentContainerDetail != null) {
+                    replace(R.id.activity_real_estate_list_fragment_container_detail, RealEstateDetailFragment())
+                }
                 commit()
             }
         }
@@ -45,6 +40,7 @@ class RealEstateListActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when(item.itemId) {
             R.id.action_add -> {
+                //Activity
                 supportFragmentManager.beginTransaction().apply {
                     replace(R.id.activity_real_estate_list_fragment_container, RealEstateAddFragment())
                     addToBackStack(null)

@@ -10,6 +10,9 @@ class RealEstateAddViewModel(
 ) : ViewModel() {
     // TODO: Implement the ViewModel
 
+    init {
+        realEstateRepository.getRealEstates()
+    }
     //public fun getAll(): LiveData<List<RealEstate>> { return realEstateRepository.getRealEstates()}
     public fun add(realEstate: RealEstate) { realEstateRepository.createRealEstate(realEstate) }
 }

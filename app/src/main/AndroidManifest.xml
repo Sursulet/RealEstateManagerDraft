@@ -3,14 +3,16 @@
     package="com.openclassrooms.realestatemanager">
 
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 
     <application
-        android:allowBackup="true"
+        android:allowBackup=""
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.RealEstateManager">
+        android:theme="@style/Theme.RealEstateManager"
+        android:fullBackupContent="@xml/backup_descriptor">
         <activity android:name=".ui.RealEstateAddActivity"
             android:theme="@style/Theme.RealEstateManager.NoActionBar"/>
         <activity android:name=".ui.RealEstateDetailActivity" />

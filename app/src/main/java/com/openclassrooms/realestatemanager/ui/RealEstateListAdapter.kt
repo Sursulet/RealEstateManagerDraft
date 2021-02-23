@@ -14,17 +14,17 @@ class RealEstateListAdapter(
 ) : ListAdapter<RealEstateItemUiModel, RealEstateListAdapter.RealEstateViewHolder>(RealEstateItemDiffCallback()) {
 
     private class RealEstateItemDiffCallback : DiffUtil.ItemCallback<RealEstateItemUiModel>() {
-        override fun areItemsTheSame(oldItem: RealEstateItemUiModel, newItem: RealEstateItemUiModel): Boolean {
-            return oldItem.id == newItem.id
-        }
+        override fun areItemsTheSame(oldItem: RealEstateItemUiModel, newItem: RealEstateItemUiModel): Boolean =
+                oldItem.id == newItem.id
 
-        override fun areContentsTheSame(oldItem: RealEstateItemUiModel, newItem: RealEstateItemUiModel): Boolean {
-            return oldItem == newItem
-        }
+        override fun areContentsTheSame(oldItem: RealEstateItemUiModel, newItem: RealEstateItemUiModel): Boolean =
+            oldItem == newItem
+
     }
 
-    inner class RealEstateViewHolder(
-            private val binding: RowRealEstateBinding
+    class RealEstateViewHolder(
+            private val binding: RowRealEstateBinding,
+            private val listener: OnItemClickListener
     ) : RecyclerView.ViewHolder(binding.root), View.OnClickListener {
 
         fun bind(item: RealEstateItemUiModel) {
@@ -41,16 +41,16 @@ class RealEstateListAdapter(
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RealEstateListAdapter.RealEstateViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RealEstateViewHolder {
         return RealEstateViewHolder(
                 RowRealEstateBinding.inflate(
                         LayoutInflater.from(parent.context),
                         parent,
                         false
-                ))
+                ), listener)
     }
 
-    override fun onBindViewHolder(holder: RealEstateListAdapter.RealEstateViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: RealEstateViewHolder, position: Int) {
         holder.bind(getItem(position))
     }
 

@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/fragment_real_estate_detail"
+    android:background="@color/colorAccent"
     tools:context=".ui.fragments.RealEstateDetailFragment">
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -23,6 +24,7 @@
         android:id="@+id/fragment_detail_media"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         tools:listitem="@layout/row_photo"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
