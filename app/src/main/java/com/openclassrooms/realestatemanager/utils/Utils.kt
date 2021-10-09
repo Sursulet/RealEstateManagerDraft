@@ -1,4 +1,4 @@
-package com.openclassrooms.realestatemanager.ui
+package com.openclassrooms.realestatemanager.utils
 
 import android.content.Context
 import android.net.wifi.WifiManager

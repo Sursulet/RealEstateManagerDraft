@@ -1,4 +1,4 @@
-package com.openclassrooms.realestatemanager.viewmodel
+package com.openclassrooms.realestatemanager.ui.list
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
@@ -8,5 +8,5 @@ import com.openclassrooms.realestatemanager.repository.RealEstateRepository
 class RealEstateListViewModel (
         realEstateRepository: RealEstateRepository
 ) : ViewModel() {
-    val realEstates: LiveData<List<RealEstate>> = realEstateRepository.getRealEstates()
+    val realEstates: LiveData<List<RealEstate>> = realEstateRepository.getAllRealEstates()
 }

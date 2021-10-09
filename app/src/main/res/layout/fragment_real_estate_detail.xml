@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/fragment_real_estate_detail"
     android:background="@color/colorAccent"
-    tools:context=".ui.fragments.RealEstateDetailFragment">
+    tools:context=".ui.detail.RealEstateDetailFragment">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/fragment_detail_title_media"

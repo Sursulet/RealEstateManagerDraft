@@ -6,16 +6,16 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 
     <application
-        android:allowBackup=""
+        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RealEstateManager"
         android:fullBackupContent="@xml/backup_descriptor">
-        <activity android:name=".ui.RealEstateAddActivity"
+        <activity android:name=".ui.edit.RealEstateAddActivity"
             android:theme="@style/Theme.RealEstateManager.NoActionBar"/>
-        <activity android:name=".ui.RealEstateDetailActivity" />
+        <activity android:name=".ui.detail.RealEstateDetailActivity" />
         <activity android:name=".ui.RealEstateListActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.RealEstateManager.NoActionBar">

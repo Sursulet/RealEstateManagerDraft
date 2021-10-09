@@ -6,9 +6,9 @@ import android.view.Menu
 import android.view.MenuItem
 import com.openclassrooms.realestatemanager.R
 import com.openclassrooms.realestatemanager.databinding.ActivityRealEstateListBinding
-import com.openclassrooms.realestatemanager.ui.fragments.RealEstateAddFragment
-import com.openclassrooms.realestatemanager.ui.fragments.RealEstateDetailFragment
-import com.openclassrooms.realestatemanager.ui.fragments.RealEstateListFragment
+import com.openclassrooms.realestatemanager.ui.edit.RealEstateAddFragment
+import com.openclassrooms.realestatemanager.ui.detail.RealEstateDetailFragment
+import com.openclassrooms.realestatemanager.ui.list.RealEstateListFragment
 
 class RealEstateListActivity : AppCompatActivity() {
 

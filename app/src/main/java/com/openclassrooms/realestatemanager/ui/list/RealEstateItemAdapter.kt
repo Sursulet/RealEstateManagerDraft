@@ -1,4 +1,4 @@
-package com.openclassrooms.realestatemanager.ui
+package com.openclassrooms.realestatemanager.ui.list
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,11 +7,10 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.openclassrooms.realestatemanager.databinding.RowRealEstateBinding
-import com.openclassrooms.realestatemanager.uimodel.RealEstateItemUiModel
 
-class RealEstateListAdapter(
+class RealEstateItemAdapter(
         private val listener: OnItemClickListener
-) : ListAdapter<RealEstateItemUiModel, RealEstateListAdapter.RealEstateViewHolder>(RealEstateItemDiffCallback()) {
+) : ListAdapter<RealEstateItemUiModel, RealEstateItemAdapter.RealEstateViewHolder>(RealEstateItemDiffCallback()) {
 
     private class RealEstateItemDiffCallback : DiffUtil.ItemCallback<RealEstateItemUiModel>() {
         override fun areItemsTheSame(oldItem: RealEstateItemUiModel, newItem: RealEstateItemUiModel): Boolean =

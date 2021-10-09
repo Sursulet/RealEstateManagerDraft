@@ -1,4 +1,4 @@
-package com.openclassrooms.realestatemanager.uimodel
+package com.openclassrooms.realestatemanager.ui.list
 
 data class RealEstateItemUiModel(
         val id: String,

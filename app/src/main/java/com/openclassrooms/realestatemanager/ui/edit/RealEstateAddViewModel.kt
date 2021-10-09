@@ -1,4 +1,4 @@
-package com.openclassrooms.realestatemanager.ui
+package com.openclassrooms.realestatemanager.ui.edit
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
@@ -10,9 +10,19 @@ class RealEstateAddViewModel(
 ) : ViewModel() {
     // TODO: Implement the ViewModel
 
+    var type = ""
+    set(value) {
+        field = value
+        validateForm()
+    }
+
+    private fun validateForm() {
+        TODO("Not yet implemented")
+    }
+
     init {
-        realEstateRepository.getRealEstates()
+        realEstateRepository.getAllRealEstates()
     }
     //public fun getAll(): LiveData<List<RealEstate>> { return realEstateRepository.getRealEstates()}
-    public fun add(realEstate: RealEstate) { realEstateRepository.createRealEstate(realEstate) }
+    //public fun add(realEstate: RealEstate) { realEstateRepository.createRealEstate(realEstate) }
 }

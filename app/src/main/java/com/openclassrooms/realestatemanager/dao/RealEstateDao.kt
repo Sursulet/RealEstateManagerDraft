@@ -7,15 +7,15 @@ import com.openclassrooms.realestatemanager.model.RealEstate
 @Dao
 interface RealEstateDao {
 
-    @Query("SELECT * FROM realestate")
-    fun getAll(): LiveData<List<RealEstate>>
+    @Query("SELECT * FROM real_estate")
+    fun getRealEstates(): LiveData<List<RealEstate>>
 
-    @Query("SELECT * FROM realestate WHERE id = :id")
+    @Query("SELECT * FROM real_estate WHERE id = :id")
     fun getRealEstate(id: Int): LiveData<RealEstate>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(realEstate: RealEstate)
+    suspend fun insertRealEstate(realEstate: RealEstate)
 
     @Update
-    fun update(realEstate: RealEstate)
+    suspend fun updateRealEstate(realEstate: RealEstate)
 }

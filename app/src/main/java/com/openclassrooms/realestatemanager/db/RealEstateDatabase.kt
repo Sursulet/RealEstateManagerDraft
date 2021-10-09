@@ -5,21 +5,24 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.openclassrooms.realestatemanager.dao.RealEstateDao
+import com.openclassrooms.realestatemanager.model.Photo
 import com.openclassrooms.realestatemanager.model.RealEstate
 
-@Database(entities = [RealEstate::class], version = 1, exportSchema = false)
+@Database(
+        entities = [RealEstate::class, Photo::class],
+        version = 1,
+        exportSchema = false)
 abstract class RealEstateDatabase: RoomDatabase() {
 
     abstract fun realEstateDao(): RealEstateDao
 
     companion object {
 
-
         @Volatile private var INSTANCE: RealEstateDatabase? = null
 
         fun getInstance(context: Context): RealEstateDatabase {
             return INSTANCE ?: synchronized(this) {
-                val instance = buildDatabase(context)
+                val instance = buildDatabase(context.applicationContext)
                 INSTANCE = instance
                 instance
             }

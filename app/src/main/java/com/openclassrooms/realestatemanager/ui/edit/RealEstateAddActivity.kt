@@ -1,10 +1,9 @@
-package com.openclassrooms.realestatemanager.ui
+package com.openclassrooms.realestatemanager.ui.edit
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.openclassrooms.realestatemanager.R
 import com.openclassrooms.realestatemanager.databinding.ActivityRealEstateAddBinding
-import com.openclassrooms.realestatemanager.ui.fragments.RealEstateAddFragment
 
 class RealEstateAddActivity : AppCompatActivity() {
 

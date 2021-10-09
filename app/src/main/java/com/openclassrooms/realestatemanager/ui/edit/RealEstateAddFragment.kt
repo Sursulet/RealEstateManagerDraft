@@ -1,4 +1,4 @@
-package com.openclassrooms.realestatemanager.ui.fragments
+package com.openclassrooms.realestatemanager.ui.edit
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -7,11 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.widget.doAfterTextChanged
 import com.openclassrooms.realestatemanager.databinding.RealEstateAddFragmentBinding
 import com.openclassrooms.realestatemanager.injection.Injection
 import com.openclassrooms.realestatemanager.injection.ViewModelFactory
 import com.openclassrooms.realestatemanager.model.RealEstate
-import com.openclassrooms.realestatemanager.ui.RealEstateAddViewModel
 
 class RealEstateAddFragment : Fragment() {
 
@@ -41,6 +41,8 @@ class RealEstateAddFragment : Fragment() {
         val type: String = binding.fragmentAddType.editText?.text.toString().trim()
         val description: String = binding.fragmentAddDescription.toString().trim()
 
+        binding.fragmentAddTypeEdit.doAfterTextChanged { text -> viewModel.type = text?.toString() ?: "" }
+
         binding.fragmentRealEstateAddBtn.setOnClickListener {
             confirmInput()
             //Toast.makeText(requireContext(), type ,Toast.LENGTH_LONG).show()
@@ -52,8 +54,8 @@ class RealEstateAddFragment : Fragment() {
         val input: String = "Type: " + binding.fragmentAddType.editText?.text.toString()
 
         Toast.makeText(requireContext(), input, Toast.LENGTH_LONG).show()
-        val realEstate = RealEstate(0,input,"description")
-        viewModel.add(realEstate)
+        val realEstate = RealEstate(0,input,"description", 1f,"Description")
+        //viewModel.add(realEstate)
     }
 
     private fun validateType(): Boolean {
